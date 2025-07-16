@@ -5,5 +5,8 @@ and train a modified deep learning model for binary classification tasks.
 
 A small portion of sub-audio (infrasound) recordings and pre-trained model weights are provided 
 for demonstration purposes.
-#### File structure
+## File structure
 ## Quick start
+**Install dependencies**
+   ```bash
+   pip install -r requirements.txt
