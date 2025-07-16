@@ -11,12 +11,13 @@ for demonstration purposes.
 ## Quick start
 
 ### 1. Install dependencies
-```bash
-pip install -r requirements.txt
+    ```bash
+    pip install -r requirements.txt
+
 ### 2. Preprocess example audio
-python preprocessing.py
+    python preprocessing.py
 ### 3. Train the model
-python train.py
+    python train.py
 
 ## Notes
 This code is for demonstration and reproducibility only
