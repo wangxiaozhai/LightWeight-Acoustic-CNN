@@ -10,3 +10,6 @@ for demonstration purposes.
 **Install dependencies**
    ```bash
    pip install -r requirements.txt
+**Preprocess example audio**
+   ```bash
+   python preprocessing.py
