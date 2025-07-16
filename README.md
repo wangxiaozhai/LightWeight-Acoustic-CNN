@@ -10,7 +10,4 @@ for demonstration purposes.
 **Install dependencies**
    ```bash
    pip install -r requirements.txt
-
-**Install dependencies**
-   ```bash
    python preprocessing.py
