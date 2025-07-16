@@ -11,10 +11,10 @@ for demonstration purposes.
 ## File structure
 
 LightWeight-Acoustic-CNN
-├── data/ # Example audio files and spectrograms (Class A / B)
+├── data/ # Example audio files and spectrograms
 ├── features/ # Preprocessed .npy and .png files
 ├── preprocessing.py # Convert .wav to spectrograms
-├── model.py # Modified EfficientNet with Ghost/ECA modules
+├── model.py # Modified  LightWeight CNN model
 ├── train.py # Train the binary classification model
 ├── test.py # Run inference with trained model
 ├── requirements.txt
