@@ -38,4 +38,3 @@ This code is for demonstration and reproducibility only
 
 Example data are generic infrasound samples for disaster monitoring, not the full research dataset
 
-Some layer configurations and parameter tuning steps have been simplified
