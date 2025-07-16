@@ -12,7 +12,7 @@ for demonstration purposes.
 
 LightWeight-Acoustic-CNN
 ├── data/ # Example audio files and spectrograms
-├── features/ # Preprocessed .npy and .png files
+├── best_model.pth # model weights
 ├── preprocessing.py # Convert .wav to spectrograms
 ├── model.py # Modified  LightWeight CNN model
 ├── train.py # Train the binary classification model
