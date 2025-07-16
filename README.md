@@ -10,5 +10,5 @@ for demonstration purposes.
 **Install dependencies**
    ```bash
    pip install -r requirements.txt
-**Preprocess example audio
+**Preprocess example audio**
    python preprocessing.py
