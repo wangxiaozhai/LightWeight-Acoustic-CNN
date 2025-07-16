@@ -6,7 +6,7 @@ and train a modified deep learning model for binary classification tasks.
 A small portion of sub-audio (infrasound) recordings and pre-trained model weights are provided 
 for demonstration purposes.
 ## File structure
----
+```
 
 ## File structure
 
@@ -20,7 +20,7 @@ LightWeight-Acoustic-CNN
 ├── requirements.txt
 └── README.md
 
----
+```
 
 ## Quick start
 
