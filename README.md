@@ -6,18 +6,16 @@ and train a modified deep learning model for binary classification tasks.
 A small portion of sub-audio (infrasound) recordings and pre-trained model weights are provided 
 for demonstration purposes.
 ## File structure
-data
-└── 24h_10mmMAX_OI
-    ├── allevents_dates.csv
-    ├── models
-    ├── study_area.csv
-    ├── obs
-    ├── OI_20152022_10mmMAX.csv
-    ├── OI_raw_mask_piem_vda.csv
-    ├── OI_regrid_mask_piem_vda.csv
-    ├── OI_regrid_mask_piem_vda_unet.csv
-    ├── OI_regrid_quota_unet.csv
-    └── split
+
+.
+├── data/ # Example audio files and spectrograms (Class A / B)
+├── features/ # Preprocessed .npy and .png files
+├── preprocessing.py # Convert .wav to spectrograms
+├── model.py # Modified EfficientNet with Ghost/ECA modules
+├── train.py # Train the binary classification model
+├── test.py # Run inference with trained model
+├── requirements.txt
+└── README.md
 
 ## Quick start
 
