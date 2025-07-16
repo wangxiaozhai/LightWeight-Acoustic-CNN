@@ -1,33 +1,42 @@
-import os
-import numpy as np
 import librosa
 import librosa.display
 import matplotlib.pyplot as plt
+import numpy as np
+import os
 
-input_folder_path = 'data'
-output_folder_path = 'features'
+def wav_to_mel(audio_file, output_folder, sr=100, n_mels=64):
+    os.makedirs(output_folder, exist_ok=True)
+    y, sr = librosa.load(audio_file, sr=sr)
+    file_base = os.path.splitext(os.path.basename(audio_file))[0]
+    mel_spect = librosa.feature.melspectrogram(
+        y=y,
+        sr=sr,
+        n_fft=256,
+        hop_length=16,
+        n_mels=n_mels,
+        fmax=sr / 2
+    )
+    mel_spect = librosa.power_to_db(mel_spect, ref=np.max)
 
-if not os.path.exists(output_folder_path):
-    os.makedirs(output_folder_path)
+    npy_path = os.path.join(output_folder, f"{file_base}.npy")
+    np.save(npy_path, mel_spect)
 
-for file_name in os.listdir(input_folder_path):
-    if file_name.endswith('.wav'):
-        input_file_path = os.path.join(input_folder_path, file_name)
+    plt.figure(figsize=(6, 4))
+    librosa.display.specshow(mel_spect, sr=sr, x_axis='time', y_axis='mel', fmax=sr / 2)
+    plt.colorbar(format='%+2.0f dB')
+    plt.title('Mel Spectrogram (Simplified)')
+    plt.tight_layout()
 
-        y, sr = librosa.load(input_file_path, sr=None)
-        y = y / np.max(np.abs(y))
+    png_path = os.path.join(output_folder, f"{file_base}.png")
+    plt.savefig(png_path)
+    plt.close()
 
-        S = librosa.feature.melspectrogram(y=y, sr=sr, n_mels=90, fmax=sr//2)
-        S_dB = librosa.power_to_db(S, ref=np.max)
+    print(f"[INFO] Saved: {png_path}")
+    print(f"[INFO] Saved: {npy_path}")
 
-        np.save(os.path.join(output_folder_path, file_name.replace('.wav', '.npy')), S_dB)
 
-        plt.figure(figsize=(6, 4))
-        librosa.display.specshow(S_dB, y_axis='mel', x_axis='time', sr=sr, fmax=sr/2)
-        plt.colorbar(format='%+2.0f dB')
-        plt.title('Mel Spectrogram (Simplified)')
-        plt.tight_layout()
-        plt.savefig(os.path.join(output_folder_path, file_name.replace('.wav', '.png')))
-        plt.close()
-
-        print(f"Processed: {file_name}")
+if __name__ == "__main__":
+    # Example
+    audio_file = "data/"
+    output_folder = "features"
+    wav_to_mel(audio_file, output_folder)
