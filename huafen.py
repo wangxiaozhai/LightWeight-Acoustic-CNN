@@ -2,7 +2,6 @@ import os
 import shutil
 import random
 
-# 文件夹路径配置
 input_folder_path = 'features'
 output_folder_base = 'features'
 
